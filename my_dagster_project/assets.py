@@ -6,8 +6,16 @@ from dagster import MaterializeResult, MetadataValue
 @asset(group_name="etl_schedule")
 def load_data() -> pd.DataFrame:
     """Load the raw data."""
+    # Use the file ID from the Google Drive shareable link
+    file_id = '1oFIXJItPRIALdqKKGu4Uqgc13e4fAzt3'
+    url = f'https://drive.google.com/uc?export=download&id={file_id}'
+
+    # Load the CSV file into a DataFrame
+    dataframe = pd.read_csv(url)
     #Load the raw data
-    dataframe = pd.read_csv('C:/Users/Lenovo/OneDrive - wasoko.com/Documents/Dagster/my-dagster-project/my_dagster_project/supermarket_sales.csv')
+    #https://drive.google.com/file/d/1oFIXJItPRIALdqKKGu4Uqgc13e4fAzt3/view?usp=drive_link
+    #C:/Users/Lenovo/OneDrive - wasoko.com/Documents/Dagster/my-dagster-project/my_dagster_project/supermarket_sales.csv
+    #dataframe = pd.read_csv('https://docs.google.com/spreadsheets/d/1zvP0FIChyyxIqntQKHmdkvnCRYOZ7CSvkwhSoaLE5Pw/edit?usp=sharing')
     return dataframe
 
 
