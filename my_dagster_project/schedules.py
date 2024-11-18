@@ -9,6 +9,6 @@ sales_schedule = ScheduleDefinition(
     name="sales_schedule",
     target=AssetSelection.groups("etl_schedule"),
     #Run this pipeline at this moment
-    cron_schedule="40 17 * * *",
+    cron_schedule="40 18 * * *",
     default_status=DefaultScheduleStatus.RUNNING
 )
