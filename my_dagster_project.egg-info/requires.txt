@@ -2,7 +2,7 @@ dagster
 dagster-cloud
 pandas
 pyodbc
-sqlalchemy
+SQLAlchemy
 
 [dev]
 dagster-webserver

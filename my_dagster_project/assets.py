@@ -39,8 +39,10 @@ def cleaning_data() -> pd.DataFrame:
 def send_data_SQLSERVER() -> MaterializeResult:
     """Storing the cleaned data to SQL SERVER."""
     # Define the connection string
-    df=cleaning_data()  
-    connection_string = "mssql+pyodbc://@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server"
+    df=cleaning_data()
+      
+    #connection_string = "mssql+pyodbc://@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server"
+    connection_string = "mssql+pyodbc://DataAnalyst:DataAnalyst@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?driver=ODBC+Driver+17+for+SQL+Server"
     # Create the engine
     engine = create_engine(connection_string)
     # Send the data to SQL Server
