@@ -42,9 +42,9 @@ def send_data_SQLSERVER() -> MaterializeResult:
     df=cleaning_data()
       
     #connection_string = "mssql+pyodbc://@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server"
-    connection_string = "mssql+pyodbc://DataAnalyst:DataAnalyst@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?driver=ODBC+Driver+17+for+SQL+Server"
+    #connection_string = "mssql+pyodbc://DataAnalyst:DataAnalyst@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?driver=ODBC+Driver+17+for+SQL+Server"
     # Create the engine
-    engine = create_engine(connection_string)
+    engine = create_engine("mssql+pyodbc://DataAnalyst:DataAnalyst@DESKTOP-1JCIH4T\SQLEXPRESS/Supermarket_DW?driver=ODBC+Driver+17+for+SQL+Server")
     # Send the data to SQL Server
     df.to_sql('Sales_etl', con=engine, if_exists='replace', index=False)
     print("Data sent to SQL SERVER successfully!")
