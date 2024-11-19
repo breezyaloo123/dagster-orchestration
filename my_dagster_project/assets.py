@@ -1,7 +1,6 @@
 from dagster import asset
 import pandas as pd
 import pyodbc
-from sqlalchemy import create_engine
 from dagster import MaterializeResult, MetadataValue
 
 @asset(group_name="etl_schedule")
