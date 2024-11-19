@@ -7,8 +7,7 @@ setup(
         "dagster",
         "dagster-cloud",
         "pandas",
-        "pyodbc",
-        "SQLAlchemy"
+        "pyodbc"
     ],
     extras_require={"dev": ["dagster-webserver", "pytest"]},
 )
