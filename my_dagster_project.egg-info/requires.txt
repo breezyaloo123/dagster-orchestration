@@ -2,6 +2,7 @@ dagster
 dagster-cloud
 pandas
 pyodbc
+unixodbc
 
 [dev]
 dagster-webserver
